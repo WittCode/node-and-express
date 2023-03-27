@@ -12,7 +12,7 @@ router.get('/:username', (request, response) => {
             console.log(`${key} : ${value}`);
         })
     }
-    response.send(`<h1>This is ${request.params.username}'s profile!</h1>`);
+    response.send(`This is ${request.params.username}'s profile!`);
 });
 
 router.get('/:username/:favChannel', (request, response) => {

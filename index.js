@@ -4,11 +4,36 @@ const app = express();
 const users = require('./routes/users');
 const posts = require('./routes/posts');
 
-app.get('/', (request, response) => {
-    response.send('This is the home page!');
-});
-
 app.use('/users', users);
 app.use('/posts', posts);
+
+app.get('/', [
+
+    (request, response, next) => {
+        console.log('middleware 1');
+        next();
+    },
+
+    (request, response, next) => {
+        console.log('middleware 2');
+        return next();
+        response.send('This is middleware number 2!');
+    },
+
+    (request, response, next) => {
+        console.log('middleware 3');
+        next();
+    },
+
+    (request, response, next) => {
+        response.send('This is middleware number 4!');
+        next();
+    }
+]);
+
+app.use(function(request, response, next) {
+    console.log('This is global middleware!');
+    next();
+});
 
 app.listen(1234);
