@@ -6,13 +6,7 @@ router.get('/', (request, response) => {
 });
 
 router.get('/:username', (request, response) => {
-    if (request.query) {
-        Object.entries(request.query).forEach((object) => {
-            let [key, value] = object;
-            console.log(`${key} : ${value}`);
-        })
-    }
-    response.send(`This is ${request.params.username}'s profile!`);
+    response.render('profile', { username: request.params.username });
 });
 
 router.get('/:username/:favChannel', (request, response) => {

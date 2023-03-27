@@ -7,6 +7,9 @@ const posts = require('./routes/posts');
 app.use('/users', users);
 app.use('/posts', posts);
 
+app.set('view engine', 'pug');
+app.set('views', './views');
+
 app.get('/', [
 
     (request, response, next) => {
