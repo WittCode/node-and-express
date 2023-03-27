@@ -1,0 +1,44 @@
+* {
+    font-family: cursive;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: gainsboro;
+    height: 400px;
+    width: 400px;
+    border-radius: 40px;
+}
+
+input:not([type='submit']) {
+    width: 250px;
+    height: 25px;
+    border-radius: 5px;
+    border: transparent;
+    padding: 2px 0 2px 5px;
+    margin: 10px 0;
+}
+
+input[type='submit'] {
+    font-size: 1.2em;
+    border: none;
+    margin-top: 5px;
+    border-radius: 5px;
+}
