@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (request, response) => {
-    response.send('<h1>This is the home page of the posts.</h1>')
+    response.send('This is the home page of the posts.')
 });
 
 router.get('/most-popular', (request, response) => {
-    response.send('<h1>These are the most popular posts.</h1>');
+    response.send('These are the most popular posts.');
 });
 
 module.exports = router;
