@@ -11,6 +11,7 @@ module.exports = {
                 password
             });
 
+            res.cookie('username', username, { secure: true });
             res.render('profile', { username });
         } else {
             res.send('Not added to the database!');
